@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Record</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<div class="title-bar">
+    <div class="title-bar-left">
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <span class="title-logo">SFC AIR FILE RECORDS</span>
+    </div>
+    <div class="title-bar-right">
+        <i class="fas fa-bolt"></i>
+        <div class="notification-icon">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count">4</span>
+        </div>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+            <span id="userName"></span>
+            <i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div>
+
+
+<body>
+    <div class="dashboard">
+        <aside class="modern-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fa fa-fighter-jet"></i>
+                    <span>SFC</span>
+                </div>
+                <div class="user-role">
+                    <span>Make things smarter</span>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    
+                    <li><a href="addRecord.html"><i class="fas fa-plus-circle"></i> Add Record</a></li>
+                    <li><a href="viewRecord.html"><i class="fas fa-list"></i> View Record</a></li>
+                    <li><a href="#" id="about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fas fa-box"></i> Products <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">Option </a></li>
+                            <li><a href="#">Required</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="powered-by">
+                    <p>copyright @ </p>
+                    <strong>Amn</strong>
+                    <small>Explore for betterment</small>
+                </div>
+                <div class="app-version">
+                    <p>App Version: <span>v1.2</span></p>
+                </div>
+                <div class="help-link">
+                    <a href="#">Any Query? <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </aside>
+        
+        <div class="form-container">
+            <h2>Add New Record</h2>
+            <form id="addRecordForm">
+                <label for="sectionName">Section Name</label>
+                <select id="sectionName" required>
+                    <option value="Pension">Pension</option>
+                    <option value="CP">CP</option>
+                    <option value="AP BBD">AP BBD</option>
+                    <option value="Imprest">Imprest</option>
+                </select>
+    
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="Commutation">Commutation</option>
+                    <option value="Reinsted">Reinsted</option>
+                    <option value="Arrear">Arrear</option>
+                    <option value="AP 1 ">AP 1 </option>
+                    <option value="AP 2">AP 2</option>
+                    <option value="AP 3">AP3 </option>
+
+                </select>
+    
+                <label for="bdNumber">Respective BD Number</label>
+                <input type="number" id="bdNumber" placeholder="Enter BD Number" required>
+    
+                <label for="shelveNumber">Shelve Number</label>
+                <input type="text" id="shelveNumber" placeholder="Enter Shelve Number" required>
+    
+                <label for="closingDate">Closing Date</label>
+                <input type="date" id="closingDate" required>
+    
+                <button type="submit">Save</button>
+            </form>
+           
+        </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+    <script src="js/addRecord.js"></script>
+    <script src="js/sidebarToggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<div class="title-bar">
+    <div class="title-bar-left">
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <span class="title-logo">SFC AIR FILE RECORDS</span>
+    </div>
+    <div class="title-bar-right">
+        <i class="fas fa-bolt"></i>
+        <div class="notification-icon">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count">4</span>
+        </div>
+        <div class="user-info">
+            <i class="fas fa-user-circle"></i>
+            <span id="userName"></span>
+            <i class="fas fa-caret-down"></i>
+        </div>
+    </div>
+</div>
+
+
+
+<body>
+    <div class="dashboard">
+        <aside class="modern-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fa fa-fighter-jet"></i>
+                    <span>SFC</span>
+                </div>
+                <div class="user-role">
+                    <span>Make things smarter</span>
+                </div>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    
+                    <li><a href="addRecord.html"><i class="fas fa-plus-circle"></i> Add Record</a></li>
+                    <li><a href="viewRecord.html"><i class="fas fa-list"></i> View Record</a></li>
+                    <li><a href="#" id="about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fas fa-box"></i> Products <i class="fas fa-chevron-down"></i></a>
+                        <ul class="submenu">
+                            <li><a href="#">Option </a></li>
+                            <li><a href="#">Required</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="powered-by">
+                    <p>copyright @ </p>
+                    <strong>Amn</strong>
+                    <small>Explore for betterment</small>
+                </div>
+                <div class="app-version">
+                    <p>App Version: <span>v1.2</span></p>
+                </div>
+                <div class="help-link">
+                    <a href="#">Any Query? <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </aside>
+        
+
+
+
+        <main class="content">
+            <h2>Welcome, File Storage System Of Sfc Air Force</h2>
+
+            
+
+            <div class="my-search-component">
+                <div class="search-container">
+                    <input type="text" placeholder="Locate Files..." aria-label="Search">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        <section class="dashboard-stats">
+            <div class="stat-card">
+                <h2 id="recordCount"> 0</h2>
+                <p class="label">Total Records</p>
+            </div>
+            <div class="stat-card">
+                <h2 id="recordCount"> 0</h2>
+                <p class="label">Total Users</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="refunds">12</h2>
+                <p class="label">Refunds</p>
+            </div>
+            
+        </section>
+        
+    
+
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header" style="background-color: #12b2ec;"></div>
+                    <div class="card-content">
+                        <i class="fas fa-fingerprint card-icon"></i>
+                        <p class="card-text">Commutation</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="background-color: #0033cc;"></div>
+                    <div class="card-content">
+                        <i class="fas fa-coins card-icon"></i>
+                        <p class="card-text">Reinsted</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="background-color: #00d4d4;"></div>
+                    <div class="card-content">
+                        <i class="fas fa-map card-icon"></i>
+                        <p class="card-text">Arrear</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" style="background-color: #cc0066;"></div>
+                    <div class="card-content">
+                        <i class="fas fa-map-marker-alt card-icon"></i>
+                        <p class="card-text">Info</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </main>
+
+
+    </div>
+    <script src="js/dashboard.js"></script>
+    <script src="js/sidebarToggle.js"></script>
+
+</body>
+</html>
