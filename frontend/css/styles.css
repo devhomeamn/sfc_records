@@ -84,7 +84,7 @@ body {
 }
 
 .sidebar-menu ul li:hover .submenu {
-    display: block;
+    display: none;
 }
 
 .submenu li a {
@@ -472,55 +472,81 @@ table th {
 }
 
 /* General Container */
+
 .form-container {
-    width:40%;
     max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    font-weight: bold;
-    
+    margin: 0 auto;
 }
 
-/* Form Title */
-.form-container h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Form Group Styling */
+.form-row {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+/* Style the radio buttons and labels inline */
+.form-group > div {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between items */
+}
+
+input[type="radio"] {
+    margin-right: 5px; /* Space between the radio button and its label */
+}
+
+/* Style for the label next to radio buttons */
+.form-group label {
+    margin-right: 15px;
+    font-size: 14px;
+    color: #333; /* Optional: Adjust color */
+}
+
+
+
+
+
+
+
+
+
 .form-group {
-    margin-bottom: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-group label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
     padding: 10px;
-    font-size: 14px;
-    color: #333;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #4caf50; /* Match the green accent in the design */
-    outline: none;
+button.btn-primary {
+    align-self: center;
+    padding: 10px 20px;
+    background-color: #4070f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.btn-primary:hover {
+    background-color: #3050d4;
 }
 
 /* Radio Button Group */

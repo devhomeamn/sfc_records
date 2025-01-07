@@ -6,32 +6,33 @@
     <title>Add Record</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+   
 </head>
 
-<div class="title-bar">
-    <div class="title-bar-left">
-        <button class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        <span class="title-logo">SFC AIR FILE RECORDS</span>
-    </div>
-    <div class="title-bar-right">
-        <i class="fas fa-bolt"></i>
-        <div class="notification-icon">
-            <i class="fas fa-bell"></i>
-            <span class="notification-count">4</span>
+        <div class="title-bar">
+        <div class="title-bar-left">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="title-logo">SFC AIR FILE RECORDS</span>
         </div>
-        <div class="user-info">
-            <i class="fas fa-user-circle"></i>
-            <span id="userName"></span>
-            <i class="fas fa-caret-down"></i>
+        <div class="title-bar-right">
+            <i class="fas fa-bolt"></i>
+            <div class="notification-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">4</span>
+            </div>
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span id="userName"></span>
+                <i class="fas fa-caret-down"></i>
+            </div>
         </div>
     </div>
-</div>
 
-
-<body>
+    <!-- Dashboard -->
     <div class="dashboard">
+        <!-- Sidebar -->
         <aside class="modern-sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-logo">
@@ -45,14 +46,13 @@
             <nav class="sidebar-menu">
                 <ul>
                     <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    
                     <li><a href="addRecord.html"><i class="fas fa-plus-circle"></i> Add Record</a></li>
                     <li><a href="viewRecord.html"><i class="fas fa-list"></i> View Record</a></li>
                     <li><a href="#" id="about"><i class="fas fa-info-circle"></i> About</a></li>
                     <li>
                         <a href="#"><i class="fas fa-box"></i> Products <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
-                            <li><a href="#">Option </a></li>
+                            <li><a href="#">Option</a></li>
                             <li><a href="#">Required</a></li>
                         </ul>
                     </li>
@@ -61,7 +61,7 @@
             </nav>
             <div class="sidebar-footer">
                 <div class="powered-by">
-                    <p>copyright @ </p>
+                    <p>Copyright @ </p>
                     <strong>Amn</strong>
                     <small>Explore for betterment</small>
                 </div>
@@ -73,74 +73,86 @@
                 </div>
             </div>
         </aside>
-        
+
+        <!-- Main Content -->
         <div class="form-container">
             <h2>Add New Record</h2>
             <form id="addRecordForm">
-                <!-- Section Name -->
-                <div class="form-group">
-                    <b  for="sectionName">Section Name</b>
-                    <select id="sectionName" required>
-                        <option value="Pension">Pension</option>
-                        <option value="CP">CP</option>
-                        <option value="AP BBD">AP BBD</option>
-                        <option value="Imprest">Imprest</option>
-                    </select>
+                <div class="form-row">
+                    <!-- Section Name -->
+                    <div class="form-group">
+                        <label for="sectionName">Section Name</label>
+                        <select id="sectionName" required>
+                            <option value="Pension">Pension</option>
+                            <option value="CP">CP</option>
+                            <option value="AP BBD">AP BBD</option>
+                            <option value="Imprest">Imprest</option>
+                        </select>
+                    </div>
+        
+                    <!-- Dynamic Category -->
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <!-- Dynamically populated -->
+                        </select>
+                    </div>
                 </div>
         
-                <!-- Dynamic Category -->
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select id="category" required>
-                        <!-- Dynamically populated -->
-                    </select>
+                <div class="form-row">
+                    <!-- Concern TS -->
+                    <div class="form-group">
+                        <label for="concernTS">Concern TS</label>
+                        <input type="text" id="concernTS" placeholder="Enter Concern TS" required>
+                    </div>
+        
+                    <!-- Central Record Room -->
+                    <div class="form-group">
+                        <label>Central Record Room</label>
+                        <div>
+                            <input type="radio" id="crrYes" name="centralRecordRoom" value="Yes" checked>
+                            <label for="crrYes">Yes</label>
+                            <input type="radio" id="crrNo" name="centralRecordRoom" value="No">
+                            <label for="crrNo">No</label>
+                        </div>
+                    </div>
+                    
                 </div>
         
-                <!-- Concern TS -->
-                <div class="form-group">
-                    <label for="concernTS">Concern TS</label>
-                    <input type="text" id="concernTS" placeholder="Enter Concern TS" required>
+                <div class="form-row">
+                    <!-- Respective BD Number -->
+                    <div class="form-group">
+                        <label for="bdNumber">Respective BD Number</label>
+                        <input type="number" id="bdNumber" placeholder="Enter BD Number" required>
+                    </div>
+        
+                    <!-- Shelve Number -->
+                    <div class="form-group">
+                        <label for="shelveNumber">Shelve Number</label>
+                        <input type="text" id="shelveNumber" placeholder="Enter Shelve Number" required>
+                    </div>
                 </div>
         
-                <!-- Central Record Room -->
-                <label>Central Record Room</label>
-                <div>
-                    <input type="radio" id="crrYes" name="centralRecordRoom" value="Yes" checked>
-                    <label for="crrYes">Yes</label>
-                    <input type="radio" id="crrNo" name="centralRecordRoom" value="No">
-                    <label for="crrNo">No</label>
-                </div>
+                <div class="form-row">
+                    <!-- Closing Date -->
+                    <div class="form-group">
+                        <label for="closingDate">Closing Date</label>
+                        <input type="date" id="closingDate" required>
+                    </div>
         
-                <!-- Stored in Room No -->
-                <div id="roomNoContainer" class="form-group" style="display: none;">
-                    <label for="roomNo">Stored In Room No:</label>
-                    <input type="text" id="roomNo" placeholder="Enter Room Number">
-                </div>
-        
-                <!-- Respective BD Number -->
-                <div class="form-group">
-                    <label for="bdNumber">Respective BD Number</label>
-                    <input type="number" id="bdNumber" placeholder="Enter BD Number" required>
-                </div>
-        
-                <!-- Shelve Number -->
-                <div class="form-group">
-                    <label for="shelveNumber">Shelve Number</label>
-                    <input type="text" id="shelveNumber" placeholder="Enter Shelve Number" required>
-                </div>
-        
-                <!-- Closing Date -->
-                <div class="form-group">
-                    <label for="closingDate">Closing Date</label>
-                    <input type="date" id="closingDate" required>
+                    <!-- Stored in Room No -->
+                    <div id="roomNoContainer" class="form-group" style="display: none;">
+                        <label for="roomNo">Stored In Room No:</label>
+                        <input type="text" id="roomNo" placeholder="Enter Room Number">
+                    </div>
                 </div>
         
                 <button type="submit" class="btn-primary">Save</button>
             </form>
         </div>
         
-        
     </div>
+
     <script src="js/dashboard.js"></script>
     <script src="js/addRecord.js"></script>
     <script src="js/sidebarToggle.js"></script>
