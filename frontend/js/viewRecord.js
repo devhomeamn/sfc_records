@@ -1,11 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const recordTableBody = document.getElementById('recordTableBody');
-    const searchButton = document.getElementById('searchButton');
-    const searchBDNumber = document.getElementById('searchBDNumber');
+    const CONFIG = {
+        API_BASE_URL: 'http://localhost:5000', // Replace with your API base URL
+        ELEMENT_IDS: {
+            RECORD_TABLE_BODY: 'recordTableBody',
+            SEARCH_BUTTON: 'searchButton',
+            SEARCH_BD_NUMBER: 'searchBDNumber',
+        },
+    };
+
+    const recordTableBody = document.getElementById(CONFIG.ELEMENT_IDS.RECORD_TABLE_BODY);
+    const searchButton = document.getElementById(CONFIG.ELEMENT_IDS.SEARCH_BUTTON);
+    const searchBDNumber = document.getElementById(CONFIG.ELEMENT_IDS.SEARCH_BD_NUMBER);
 
     const fetchRecords = async (query = '') => {
         try {
-            const response = await fetch(`http://localhost:5000/records${query}`);
+            const response = await fetch(`${CONFIG.API_BASE_URL}/records${query}`);
             if (!response.ok) throw new Error('Failed to fetch records');
 
             const { records } = await response.json();
@@ -18,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Populate the table with fetched records
-            recordTableBody.innerHTML = records.map(record => `
+            recordTableBody.innerHTML = records
+                .map(
+                    (record) => `
                 <tr>
                     <td>${record.serialNumber}</td>
                     <td>${record.sectionName}</td>
@@ -31,7 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <td>${record.centralRecordRoom}</td>
                     <td>${record.roomNo || 'N/A'}</td>
                 </tr>
-            `).join('');
+            `
+                )
+                .join('');
         } catch (error) {
             console.error('Error fetching records:', error.message);
             alert('Error fetching records. Please try again later.');

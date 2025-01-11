@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const API_BASE_URL = 'http://localhost:5000'; // Replace with your API base URL if needed
     const addRecordForm = document.getElementById('addRecordForm');
     const sectionName = document.getElementById('sectionName');
     const category = document.getElementById('category');
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/records/add', {
+            const response = await fetch(`${API_BASE_URL}/records/add`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(recordData),
