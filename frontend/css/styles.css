@@ -2,12 +2,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+
 }
 
 
 .dashboard {
     display: flex;
     height: 100vh;
+
 }
 /*dashboard */
 /* Modern Sidebar Styles */
@@ -18,10 +20,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: fit-content;
+    height: 100vh;
     padding: 20px 10px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
+    position: static;
 }
 
 .sidebar-header {
@@ -234,6 +237,7 @@ table th {
 
 /* Title Bar Styles */
 .title-bar {
+    position: static;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -469,6 +473,7 @@ table th {
 
 .content {
     margin-left: 20px; /* Adds a 20px margin between the sidebar and the main content */
+    overflow-y: auto;
 }
 
 /* General Container */
@@ -494,11 +499,11 @@ form {
 .form-group > div {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between items */
+    gap: 6px; /* Space between items */
 }
 
 input[type="radio"] {
-    margin-right: 5px; /* Space between the radio button and its label */
+    margin-right: 3px; /* Space between the radio button and its label */
 }
 
 /* Style for the label next to radio buttons */
@@ -552,7 +557,7 @@ button.btn-primary:hover {
 /* Radio Button Group */
 .radio-group {
     display: flex;
-    gap: 15px;
+    gap: 22px;
     align-items: center;
 }
 
