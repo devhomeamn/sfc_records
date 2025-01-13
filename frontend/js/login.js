@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const CONFIG = {
-        API_BASE_URL: 'http://localhost:5000', // Replace with your API base URL
+        API_BASE_URL: '', // Replace with your API base URL
         PATHS: {
             DASHBOARD: 'dashboard.html',
         },
