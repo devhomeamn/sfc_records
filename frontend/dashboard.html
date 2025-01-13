@@ -50,6 +50,8 @@
                     
                     <li><a href="addRecord.html"><i class="fas fa-plus-circle"></i> Add Record</a></li>
                     <li><a href="viewRecord.html"><i class="fas fa-list"></i> View Record</a></li>
+                    <li><a href="allUsers.html" id="allusers"><i class="fas fa-info-circle"></i> All Users</a></li>
+                    <li>
                     <li><a href="#" id="about"><i class="fas fa-info-circle"></i> About</a></li>
                     <li>
                         <a href="#"><i class="fas fa-box"></i> Products <i class="fas fa-chevron-down"></i></a>
@@ -76,74 +78,118 @@
             </div>
         </aside>
         
-
-
-
         <main class="content">
-            <h2>Welcome, File Storage System Of Sfc Air Force</h2>
+            <div  class="dashboard-navigation">
+                <h2>Welcome, File Storage System Of Sfc Air Force</h2>
 
-            
 
-            <div class="my-search-component">
-                <div class="search-container">
-                    <input type="text" placeholder="Locate Files..." aria-label="Search">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
             </div>
-        <section class="dashboard-stats">
+                     
+
+                            <div class="search-bar">
+                                <i class="fa fa-search"></i>
+                                <input type="text"  id ="searchBDNumber"placeholder="Search with BD...">
+                                <button id="searchButton" type="button">GO</button>
+                            </div>
+       <section class="dashboard-stats">
             <div class="stat-card">
                 <h2 id="recordCount"> 0</h2>
                 <p class="label">Total Records</p>
             </div>
             <div class="stat-card">
-                <h2 id="recordCount"> 0</h2>
+                <h2 id="userName"> 0 </h2>
                 <p class="label">Total Users</p>
             </div>
             <div class="stat-card">
-                <h2 id="recordCount"> 0</h2>
-                <p class="label">Total Users</p>
+                <h2 id="userId"> 0</h2>
+                <p class="label">Total Sections</p>
             </div>
 
             <div class="stat-card">
-                <h2 id="refunds">12</h2>
+                <h2 id="serviceNo">0</h2>
                 <p class="label">Refunds</p>
             </div>
-            
         </section>
-        
+       
     
-
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-header" style="background-color: #12b2ec;"></div>
-                    <div class="card-content">
-                        <i class="fas fa-fingerprint card-icon"></i>
-                        <p class="card-text">Commutation</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #0033cc;"></div>
-                    <div class="card-content">
-                        <i class="fas fa-coins card-icon"></i>
-                        <p class="card-text">Reinsted</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #00d4d4;"></div>
-                    <div class="card-content">
-                        <i class="fas fa-map card-icon"></i>
-                        <p class="card-text">Arrear</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" style="background-color: #cc0066;"></div>
-                    <div class="card-content">
-                        <i class="fas fa-map-marker-alt card-icon"></i>
-                        <p class="card-text">Info</p>
-                    </div>
-                </div>
+       
+       
+        <section class="dashboard-navigation">
+            <div class="nav-card-container">
+                <!-- Loop through 17 cards with links -->
+                <a href="#dashboard" class="nav-card" id="section1">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="#user-management" class="nav-card" id="section2">
+                    <i class="fas fa-user"></i>
+                    <h3>User Management</h3>
+                </a>
+                <a href="#file-records" class="nav-card" id="section3">
+                    <i class="fas fa-folder"></i>
+                    <h3>File Records</h3>
+                </a>
+                <a href="#reports" class="nav-card" id="section4">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#settings" class="nav-card" id="section5">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Settings</h3>
+                </a>
+                <a href="#schedule" class="nav-card" id="section6">
+                    <i class="fas fa-calendar"></i>
+                    <h3>Schedule</h3>
+                </a>
+                <a href="#messages" class="nav-card" id="section7">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Messages</h3>
+                </a>
+                <a href="#notifications" class="nav-card" id="section8">
+                    <i class="fas fa-bell"></i>
+                    <h3>Notifications</h3>
+                </a>
+                <a href="#location" class="nav-card" id="section9">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                </a>
+                <a href="#teams" class="nav-card" id="section10">
+                    <i class="fas fa-users"></i>
+                    <h3>Teams</h3>
+                </a>
+                <a href="#billing" class="nav-card" id="section11">
+                    <i class="fas fa-money-check-alt"></i>
+                    <h3>Billing</h3>
+                </a>
+                <a href="#tasks" class="nav-card" id="section12">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>Tasks</h3>
+                </a>
+                <a href="#data" class="nav-card" id="section13">
+                    <i class="fas fa-database"></i>
+                    <h3>Data</h3>
+                </a>
+                <a href="#maintenance" class="nav-card" id="section14">
+                    <i class="fas fa-tools"></i>
+                    <h3>Maintenance</h3>
+                </a>
+                <a href="#analytics" class="nav-card" id="section15">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#support" class="nav-card" id="section16">
+                    <i class="fas fa-life-ring"></i>
+                    <h3>Support</h3>
+                </a>
+                <a href="#about" class="nav-card" id="section17">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>About</h3>
+                </a>
             </div>
+        </section>
+           
 
+            
 
 
 

@@ -5,10 +5,10 @@ body {
 
 }
 
+
 .dashboard {
     display: flex;
     height: 100vh;
-    
 
 }
 /*dashboard */
@@ -28,7 +28,7 @@ body {
 }
 
 .sidebar-header {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .sidebar-logo {
@@ -44,7 +44,7 @@ body {
 }
 
 .user-role {
-    margin-top: 0px;
+    margin-top: 10px;
     font-size: 14px;
     font-weight: lighter;
     color: #b0c4de;
@@ -96,7 +96,7 @@ body {
 }
 
 .sidebar-footer {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 14px;
     text-align: center;
 }
@@ -112,7 +112,7 @@ body {
 }
 
 .sidebar-footer .app-version {
-    margin-top: 20px;
+    margin-top: 10px;
     color: #b0c4de;
 }
 
@@ -136,94 +136,46 @@ body {
     margin: 20px auto;
     text-align: center;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    font-size: 1em;
-    font-family: Arial, sans-serif;
-    text-align: left;
-    background-color: #f9f9f9;
-}
-
-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
 }
 
 table th, table td {
-    border: 1px solid #dddddd;
-    padding: 12px 15px;
-}
-
-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
-table tbody tr:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-}
-
-table td:first-child, table th:first-child {
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
 }
 
-table caption {
-    margin: 10px 0;
-    font-size: 1.25em;
-    font-weight: bold;
-    color: #333;
+table th {
+    background-color: #2a9d8f;
 }
 
 /* Search Form Styling */
-.search-bar {
-    display: flex;
-    width: 300px;
-    align-items: center;
-    border: 2px solid #e4084a;
-    border-radius: 25px;
-    padding: 5px 10px;
-    background-color: #fff;
+.search-container {
+    margin-bottom: 20px;
 }
 
-.search-bar i {
-    font-size: 18px;
-    color: #555;
-    margin-right: 8px;
+.search-container label {
+    margin-right: 10px;
 }
 
-.search-bar input {
-    border: none;
-    outline: none;
-    font-size: 16px;
+.search-container input {
+    margin-right: 20px;
     padding: 5px;
-    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.search-bar button {
+.search-container button {
+    padding: 5px 10px;
     border: none;
-    background-color: #000;
-    color: #fff;
-    padding: 6px 15px;
-    border-radius: 15px;
-    font-size: 14px;
+    background-color: #007bff;
+    color: white;
     cursor: pointer;
-    margin-left: 8px;
-}
-
-.search-bar button:hover {
-    background-color: #555;
+    border-radius: 4px;
 }
 
 .wlc-tag {
@@ -368,7 +320,7 @@ table caption {
 /* Closed Sidebar Styles */
 .modern-sidebar.closed {
     width: 0;
-    overflow-y: auto;
+    overflow: hidden;
     transition: width 0.3s ease;
 }
 
@@ -519,23 +471,11 @@ table caption {
 }
 
 
-
-
-
-
-
 .content {
-    margin-left: 50px; /* Align with the sidebar */
-    padding: 20px;
-    height: 100vh;
-    overflow-y: auto; /* Enable vertical scrolling if needed */
-    scrollbar-width: none; /* For modern browsers like Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer */
+    margin-left: 20px; /* Adds a 20px margin between the sidebar and the main content */
+    overflow-y: auto;
 }
 
-.content::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Edge */
-}
 /* General Container */
 
 .form-container {
@@ -694,12 +634,11 @@ button.btn-primary:hover {
     width: 100%;
     text-align: center;
 }
-h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: #333; /* Dark gray for text */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
+
+h2 {
+    margin-bottom: 1.5rem;
+    color: #6a11cb;
+}
 
 form {
     display: flex;
@@ -749,74 +688,5 @@ a {
 }
 
 a:hover {
-    
-    text-decoration: underline ;
-
+    text-decoration: underline;
 }
-
-/* section for navigation*/
-.dashboard-navigation {
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-.nav-card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-/* Nav Card Styling */
-.nav-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none; /* Ensures links don't show underlines */
-    color: #333333; /* Default text color */
-    font-weight: bold;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Icon Styling */
-.nav-card i {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-/* Color Styles for Each Section */
-#section1 { background-color: #e63946; color: white; }
-#section2 { background-color: #f4a261; color: white; }
-#section3 { background-color: #2a9d8f; color: white; }
-#section4 { background-color: #264653; color: white; }
-#section5 { background-color: #457b9d; color: white; }
-#section6 { background-color: #e9c46a; color: black; }
-#section7 { background-color: #06d6a0; color: white; }
-#section8 { background-color: #118ab2; color: white; }
-#section9 { background-color: #073b4c; color: white; }
-#section10 { background-color: #ff6f61; color: white; }
-#section11 { background-color: #a8dadc; color: black; }
-#section12 { background-color: #f6bd60; color: black; }
-#section13 { background-color: #6a0572; color: white; }
-#section14 { background-color: #d4a373; color: black; }
-#section15 { background-color: #8338ec; color: white; }
-#section16 { background-color: #ff006e; color: white; }
-#section17 { background-color: #3a86ff; color: white; }
-
-/* Hover Effects */
-.nav-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    filter: brightness(1.1); /* Slightly brighten colors on hover */
-}
-
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #161616; /* Dark gray for text */
-     }
