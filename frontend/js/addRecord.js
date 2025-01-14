@@ -7,6 +7,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const roomNoContainer = document.getElementById('roomNoContainer');
     const roomNo = document.getElementById('roomNo');
     const concernTS = document.getElementById('concernTS');
+    const modal = document.getElementById('confirmationModal');
+    const modalContent = document.getElementById('modalContent');
+    const closeModalBtn = document.getElementById('closeModal');
+    const editBtn = document.getElementById('editRecord');
+    const testModalButton = document.getElementById('testModalButton');
+
+    
+    // Function to show the modal
+    function showModal() {
+        modal.style.display = 'flex'; // Explicitly set to flex for centering
+    }
+
+    // Function to hide the modal
+    function hideModal() {
+        modal.style.display = 'none';
+    }
+
+    // Event listener to show the modal
+    testModalButton.addEventListener('click', () => {
+        showModal();
+    });
+
+    // Event listeners to close the modal
+    closeModalBtn.addEventListener('click', hideModal);
+    editBtn.addEventListener('click', hideModal);
+
+
+
+
+
+
+// dummy data modal active
+
+
+
 
     // Initialize category dropdown based on section
     sectionName.addEventListener('change', () => {
@@ -72,9 +107,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (response.status === 201) {
-                alert('Record added successfully!');
+                // Populate the modal with record details
+                modalContent.innerHTML = `
+                    <p><strong>Section Name:</strong> ${recordData.sectionName}</p>
+                    <p><strong>Category:</strong> ${recordData.category}</p>
+                    <p><strong>Concern TS:</strong> ${recordData.concernTS}</p>
+                    <p><strong>Central Record Room:</strong> ${recordData.centralRecordRoom}</p>
+                    <p><strong>Room No:</strong> ${recordData.roomNo || 'N/A'}</p>
+                    <p><strong>BD Number:</strong> ${recordData.bdNumber}</p>
+                    <p><strong>Shelve Number:</strong> ${recordData.shelveNumber}</p>
+                    <p><strong>Closing Date:</strong> ${recordData.closingDate}</p>
+                `;
+
+                // Show the modal
+                showModal();
+
+                // Clear the form
                 addRecordForm.reset();
-                roomNoContainer.style.display = 'none'; // Reset "Stored In Room No" field
+                roomNoContainer.style.display = 'none';
             } else {
                 const error = await response.json();
                 alert(`Error: ${error.message}`);
@@ -84,4 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Error adding record. Please try again.');
         }
     });
+
+    // Modal close and edit functionality
+    
+
+
+
+
 });

@@ -541,6 +541,7 @@ table caption {
 .form-container {
     max-width: 800px;
     margin: 0 auto;
+
 }
 
 form {
@@ -820,3 +821,70 @@ h2 {
     font-size: 2rem;
     color: #161616; /* Dark gray for text */
      }
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Default to hidden */
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%; /* Ensures responsiveness */
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.3s ease-in-out;
+}/* Modal Actions */
+.modal-actions {
+    margin-top: 20px;
+}
+
+/* Buttons */
+.btn-primaryy, .btn-secondary {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primaryy {
+    background-color: #0cd659;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #8f1447;
+    color: white;
+}
+
+/* Button Hover Effects */
+.btn-primaryy:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
