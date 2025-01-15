@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_BASE_URL = 'https://sfcrecords.onrender.com/'; // Replace with your API base URL if needed
+    const API_BASE_URL = ''; // Replace with your API base URL if needed
     const addRecordForm = document.getElementById('addRecordForm');
     const sectionName = document.getElementById('sectionName');
     const category = document.getElementById('category');
