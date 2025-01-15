@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const CONFIG = {
             
-            API_BASE_URL: 'http://localhost:5000',
+            API_BASE_URL: '',
             ENDPOINTS: {
                 USERS: '/users',
                 LOGIN: '/auth/login',
