@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const API_BASE_URL = 'http://localhost:5000'; // Replace with your API base URL if needed
+    const API_BASE_URL = ''; // Replace with your API base URL if needed
     const addRecordForm = document.getElementById('addRecordForm');
     const sectionName = document.getElementById('sectionName');
     const category = document.getElementById('category');
@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalContent = document.getElementById('modalContent');
     const closeModalBtn = document.getElementById('closeModal');
     const editBtn = document.getElementById('editRecord');
-    const testModalButton = document.getElementById('testModalButton');
-
+    
     
     // Function to show the modal
     function showModal() {
@@ -24,11 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'none';
     }
 
-    // Event listener to show the modal
-    testModalButton.addEventListener('click', () => {
-        showModal();
-    });
-
+    
     // Event listeners to close the modal
     closeModalBtn.addEventListener('click', hideModal);
     editBtn.addEventListener('click', hideModal);
