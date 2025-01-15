@@ -7,28 +7,28 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<div class="title-bar">
-    <div class="title-bar-left">
-        <button class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </button>
-        <span class="title-logo">SFC AIR FILE RECORDS</span>
-    </div>
-    <div class="title-bar-right">
-        <i class="fas fa-bolt"></i>
-        <div class="notification-icon">
-            <i class="fas fa-bell"></i>
-            <span class="notification-count">4</span>
-        </div>
-        <div class="user-info">
-            <i class="fas fa-user-circle"></i>
-            <span id="userName"></span>
-            <i class="fas fa-caret-down"></i>
-        </div>
-    </div>
-</div>
-
 <body>
+    <div class="title-bar">
+        <div class="title-bar-left">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <span class="title-logo">SFC AIR FILE RECORDS</span>
+        </div>
+        <div class="title-bar-right">
+            <i class="fas fa-bolt"></i>
+            <div class="notification-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">4</span>
+            </div>
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i>
+                <span id="userName"></span>
+                <i class="fas fa-caret-down"></i>
+            </div>
+        </div>
+    </div>
+
     <div class="dashboard">
         <aside class="modern-sidebar">
             <div class="sidebar-header">
@@ -70,12 +70,12 @@
                 </div>
             </div>
         </aside>
-        
+
         <main class="content">
             <h1>View Records</h1>
             <div class="search-bar">
                 <i class="fa fa-search"></i>
-                <input type="text"  id ="searchBDNumber"placeholder="Search with BD...">
+                <input type="text" id="searchBDNumber" placeholder="Search with BD...">
                 <button id="searchButton" type="button">GO</button>
             </div>
             
@@ -92,6 +92,8 @@
                         <th>Concern TS</th>
                         <th>Central Record Room</th>
                         <th>Room No</th>
+                        <th>Actions</th>
+                        
                     </tr>
                 </thead>
                 <tbody id="recordTableBody">
@@ -100,6 +102,23 @@
             </table>
         </main>
     </div>
+
+    <!-- Edit Record Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Record</h3>
+            <form id="editForm">
+                <input type="hidden" id="editRecordId">
+                <label>Section Name: <input type="text" id="editSectionName"></label>
+                <label>Category: <input type="text" id="editCategory"></label>
+                <label>BD Number: <input type="text" id="editBDNumber"></label>
+                <label>Shelve Number: <input type="text" id="editShelveNumber"></label>
+                <button type="submit">Save Changes</button>
+                <button type="button" id="cancelEdit">Cancel</button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/viewRecord.js"></script>
     <script src="js/sidebarToggle.js"></script>
 </body>

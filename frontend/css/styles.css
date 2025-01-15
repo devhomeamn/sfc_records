@@ -525,7 +525,7 @@ table caption {
 
 
 .content {
-    margin-left: 50px; /* Align with the sidebar */
+    margin-left: 20px; /* Align with the sidebar */
     padding: 20px;
     height: 100vh;
     overflow-y: auto; /* Enable vertical scrolling if needed */
@@ -887,4 +887,45 @@ h2 {
         opacity: 1;
         transform: scale(1);
     }
+}
+.modal.show {
+    display: block; /* Show modal when needed */
+}
+
+/* Style the action buttons *//* General button styles */
+
+button.editBtn, button.deleteBtn {
+    border: none;
+    color: white;
+    font-size: 12px; /* Icon size */
+    padding: 10px 15px; /* Adjust button size */
+    margin: 0 5px; /* Space between buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    display: inline-flex; /* Center align icon */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Edit button styles */
+button.editBtn {
+    background-color: #28a745; /* Green background */
+}
+
+button.editBtn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Delete button styles */
+button.deleteBtn {
+    background-color: #dc3545; /* Red background */
+}
+
+button.deleteBtn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Adjust icon appearance */
+button i {
+    margin-right: 5px; /* Add space between icon and text */
 }
