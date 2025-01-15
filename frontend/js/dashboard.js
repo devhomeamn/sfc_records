@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const CONFIG = {
-        API_BASE_URL: 'http://localhost:5000', // Replace with a configurable base URL
+        API_BASE_URL: 'https://sfcrecords.onrender.com/', // Replace with a configurable base URL
         PATHS: {
             LOGIN_PAGE: 'index.html',
         },
