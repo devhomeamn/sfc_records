@@ -12,8 +12,73 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('closeModal');
     const editBtn = document.getElementById('editRecord');
     
+    const sectionDropdown = document.getElementById('sectionDropdown');
+    const categoryDropdown = document.getElementById('categoryDropdown');
+
+    // Fetch sections from the backend
+   
     
-    // Function to show the modal
+
+    // Fetch sections from the backend
+    fetch('/dmroute/sections')
+        .then(response => response.json())
+        .then(data => {
+            const sections = data.sections || [];
+            sections.forEach(section => {
+                const option = document.createElement('option');
+                option.value = section.name;
+                option.textContent = section.name;
+                option.dataset.categories = JSON.stringify(section.categories); // Store categories as data attribute
+                sectionDropdown.appendChild(option);
+            });
+        })
+        .catch(err => console.error('Error fetching sections:', err));
+
+    // Attach onchange event handler
+    sectionDropdown.addEventListener('change', () => {
+        const selectedOption = sectionDropdown.options[sectionDropdown.selectedIndex];
+        const categories = JSON.parse(selectedOption.dataset.categories || '[]');
+
+        categoryDropdown.innerHTML = '<option value="">Select a category</option>';
+        if (categories.length > 0) {
+            categoryDropdown.disabled = false;
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categoryDropdown.appendChild(option);
+            });
+        } else {
+            categoryDropdown.disabled = true;
+        }
+    });
+
+
+// Update categories based on selected section
+function updateCategories() {
+    const sectionDropdown = document.getElementById('sectionDropdown');
+    const categoryDropdown = document.getElementById('categoryDropdown');
+
+    const selectedOption = sectionDropdown.options[sectionDropdown.selectedIndex];
+    const categories = JSON.parse(selectedOption.dataset.categories || '[]');
+
+    categoryDropdown.innerHTML = '<option value="">Select a category</option>';
+    if (categories.length > 0) {
+        categoryDropdown.disabled = false;
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categoryDropdown.appendChild(option);
+        });
+    } else {
+        categoryDropdown.disabled = true;
+    }
+
+
+}
+
+// Function to show the modal
     function showModal() {
         modal.style.display = 'flex'; // Explicitly set to flex for centering
     }
@@ -28,37 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModalBtn.addEventListener('click', hideModal);
     editBtn.addEventListener('click', hideModal);
 
-
-
-
-
-
 // dummy data modal active
 
-
-
-
     // Initialize category dropdown based on section
-    sectionName.addEventListener('change', () => {
-        const selectedSection = sectionName.value;
-        category.innerHTML = ''; // Clear existing options
-
-        let options = [];
-        if (selectedSection === 'Pension') {
-            options = ['Arrear', 'Commutation', 'Reinsted'];
-        } else if (selectedSection === 'AP BBD') {
-            options = ['AP-1', 'AP-2', 'AP-3'];
-        } else {
-            options = ['Default Option 1', 'Default Option 2']; // Fallback options
-        }
-
-        options.forEach(opt => {
-            const option = document.createElement('option');
-            option.value = opt;
-            option.textContent = opt;
-            category.appendChild(option);
-        });
-    });
 
     // Show/hide "Stored In Room No" field
     document.getElementsByName('centralRecordRoom').forEach(radio => {
@@ -68,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Trigger the dropdown initialization on page load
-    sectionName.dispatchEvent(new Event('change'));
+   
 
     // Form submission
     addRecordForm.addEventListener('submit', async (e) => {
@@ -83,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Prepare form data
         const recordData = {
-            sectionName: sectionName.value,
-            category: category.value,
+            sectionName: sectionDropdown.value,
+            category: categoryDropdown.value,
             concernTS: concernTS.value,
             centralRecordRoom: document.querySelector('input[name="centralRecordRoom"]:checked').value,
             roomNo: crrNo.checked ? roomNo.value : null,
@@ -132,8 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modal close and edit functionality
     
-
-
+    
 
 
 });

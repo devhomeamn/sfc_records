@@ -10,6 +10,8 @@ require('dotenv').config(); // Load environment variables from .env file
 const authRoutes = require('./backend/routes/authRoutes');
 const recordRoutes = require('./backend/routes/recordRoutes');
 const userRoutes = require('./backend/routes/userRoutes');
+const dataRoutes =require ('./backend/routes/dataRoutes');
+
 const app = express();
 
 // Middleware
@@ -37,6 +39,8 @@ mongoose
 app.use('/auth', authRoutes);
 app.use('/records', recordRoutes);
 app.use('/users', userRoutes);
+app.use('/dmroute',dataRoutes);
+
 
 // Serve static files from the frontend directory
 app.use(express.static(path.join(__dirname, 'frontend')));

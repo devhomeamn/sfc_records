@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Custom minimal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c1c1c5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #585656;
+        }
+
+        h1 {
+            color: #eb1756;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .form-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-card {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            flex: 1;
+        }
+
+        input, select {
+            width: 80%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            border: 1px solid #ee083a;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        input:focus, select:focus {
+            border-color: #4a90e2;
+            outline: none;
+            box-shadow: 0px 0px 3px rgba(74, 144, 226, 0.5);
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        ul li {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0.5rem;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+        <h1>Data Management</h1>
+    
+    <div class="form-container">
+        <div class="form-card">
+            <h2>Add Section</h2>
+            <input type="text" id="sectionName" placeholder="Enter section name" />
+            <button onclick="addSection()">Add Section</button>
+        </div>
+
+        <div class="form-card">
+            <h2>Add Category</h2>
+            <select id="sectionDropdown"></select>
+            <input type="text" id="categoryName" placeholder="Enter category name" />
+            <button onclick="addCategory()">Add Category</button>
+        </div>
+    </div>
+
+    <div>
+        <h2>Sections and Categories</h2>
+        <ul id="sectionsList"></ul>
+    </div>
+
+    <script src="js/dataManagement.js"></script>
+    
+</body>
+</html>

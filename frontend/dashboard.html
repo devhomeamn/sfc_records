@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <script src="js/sidebarLoader.js"></script>
     <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
 <div class="title-bar">
@@ -34,50 +35,7 @@
 
 <body>
     <div class="dashboard">
-        <aside class="modern-sidebar">
-            <div class="sidebar-header">
-                <div class="sidebar-logo">
-                    <i class="fa fa-fighter-jet"></i>
-                    <span>SFC</span>
-                </div>
-                <div class="user-role">
-                    <span>Make things smarter</span>
-                </div>
-            </div>
-            <nav class="sidebar-menu">
-                <ul>
-                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                    
-                    <li><a href="addRecord.html"><i class="fas fa-plus-circle"></i> Add Record</a></li>
-                    <li><a href="viewRecord.html"><i class="fas fa-list"></i> View Record</a></li>
-                    <li><a href="allUsers.html" id="allusers"><i class="fas fa-info-circle"></i> All Users</a></li>
-                    <li>
-                    <li><a href="#" id="about"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li>
-                        <a href="#"><i class="fas fa-box"></i> Products <i class="fas fa-chevron-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="#">Option </a></li>
-                            <li><a href="#">Required</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-                </ul>
-            </nav>
-            <div class="sidebar-footer">
-                <div class="powered-by">
-                    <p>copyright @ </p>
-                    <strong>Amn</strong>
-                    <small>Explore for betterment</small>
-                </div>
-                <div class="app-version">
-                    <p>App Version: <span>v1.2</span></p>
-                </div>
-                <div class="help-link">
-                    <a href="#">Any Query? <i class="fas fa-chevron-right"></i></a>
-                </div>
-            </div>
-        </aside>
-        
+        <div id="sidebar-container"></div>
         <main class="content">
             <div  class="dashboard-navigation">
                 <h2>Welcome, File Storage System Of Sfc Air Force</h2>
@@ -202,7 +160,8 @@
 
     </div>
     <script src="js/dashboard.js"></script>
-    <script src="js/sidebarToggle.js"></script>
+    <script src="js/sidebarLoader.js"></script>
 
 </body>
+
 </html>
